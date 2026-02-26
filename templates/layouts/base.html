@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% content title %}
+    {% block title %}
 
     <title>Sabu blog</title>
     {% endblock %}
   </head>
   <body>
-    {% content block %} {% endblock %}
+    <header>
+      <a href="/">Sabu Blog</a>
+      <nav>
+        <ul>
+          <li><a href="create_post">Create post </a></li>
+          {% comment %} <li><a herf="">Create post </a></li> {% endcomment %}
+        </ul>
+      </nav>
+    </header>
+    {% block content %} {% endblock %}
   </body>
 </html>
