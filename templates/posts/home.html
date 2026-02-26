@@ -1,0 +1,7 @@
+{% extends 'layouts/base.html'%} {% block content %}
+<h1>Posts page</h1>
+<ul>
+  {% for post in posts %}
+  <li><a href="posts/{{post.id}}">{{ post.title }}</a></li>
+</ul>
+{% endfor %} {% endblock %}
