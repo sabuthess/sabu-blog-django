@@ -32,7 +32,10 @@ def update_post(request, id):
         if form.is_valid():
             form.save()
             return redirect(f'post_view', id=post.id)
-    return render(request, 'posts/update_post.html', {'form': form})
+    return render(request, 'posts/update_post.html', {
+        'form': form,
+        'post':post
+        })
 
 
 
