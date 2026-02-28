@@ -1,7 +1,19 @@
 {% extends 'layouts/base.html'%} {% block content %}
 <h1>Posts page</h1>
-<ul>
+<main class="w-4/5 mx-auto flex flex-wrap justify-center gap-10">
   {% for post in posts %}
-  <li><a href="posts/{{post.id}}">{{ post.title }}</a></li>
-</ul>
-{% endfor %} {% endblock %}
+  <article class="flex flex-col gap-3 w-96 bg-slate-700 p-3">
+    <a class="post_title" href="posts/{{post.id}}"> {{ post.title }} </a>
+    <div class="flex justify-between">
+      <button class="bg-black text-white p-2 rounded-md cursor-pointer">Add comment</button>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z" /></svg>
+
+      </button>
+    </div>
+  </article>
+
+  {% endfor %}
+</main>
+{% endblock %}

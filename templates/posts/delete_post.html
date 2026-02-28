@@ -1,8 +1,14 @@
-<h2>¿Seguro que quieres eliminar "{{ post.title }}"?</h2>
+{% extends 'layouts/base.html'%} {% block content %}
 
-<form method="POST">
+<main class="w-2/4 mx-auto mt-10 bg-neutral-200 p-10 flex flex-col gap-10">
+  <h2 class="text-center text-4xl">
+    ¿Seguro que quieres eliminar el post - "{{ post.id }}"?
+  </h2>
+  <div class="flex gap-5 justify-center">
+  <form method="POST">
     {% csrf_token %}
-    <button type="submit">Confirm</button>
-</form>
-
-<a href="/posts/{{post.id}}">Cancelar</a>
+    <button class="p-2 rounded-md bg-teal-600" type="submit">Confirm</button>
+  </form>
+  <a class="p-2 rounded-md bg-red-400" href="/posts/{{post.id}}">Cancelar</a>
+</main>
+{% endblock %}
